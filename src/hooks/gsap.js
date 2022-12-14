@@ -150,6 +150,56 @@ export const useGsapPhotoLevitate = (arr, trig) => {
   }, [])
 }
 
+export const useGsapFeaturedLeftShutter = (item, trig) => {
+  useEffect(() => {
+    const el = item.current;
+
+    gsap.fromTo(
+      el,
+      {
+        height: "100%",
+      },
+      {
+        height: 0,
+        duration: 1.2,
+        ease: Expo.easeInOut,
+        scrollTrigger: {
+          trigger: trig.current,
+          start: "top center",
+          end: "bottom center",
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
+  }, []);
+};
+
+export const useGsapFeaturedRightShutter = (item, trig) => {
+  useEffect(() => {
+    const el = item.current;
+
+    gsap.fromTo(
+      el,
+      {
+        width: "100%",
+      },
+      {
+        width: 0,
+        duration: 1.2,
+        delay: 0.2,
+        ease: Expo.easeInOut,
+        scrollTrigger: {
+          trigger: trig.current,
+          start: "top center",
+          end: "bottom center",
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
+  }, []);
+};
+
+
 export const useGsapFooterReveal = (item, trig) => {
   useEffect(() => {
     const el = item.current;
@@ -176,7 +226,6 @@ export const useGsapFooterReveal = (item, trig) => {
 // not hook
 
 export const gsapHoverAnimation = (item) => {
-
   const el = item.current;
 
   gsap.to(el,
@@ -186,7 +235,22 @@ export const gsapHoverAnimation = (item) => {
       duration: 1,
       ease: Expo.easeInOut,
     })
+}
 
+export const gsapHoverRotateAnimation = (item) => {
+  const el = item.current;
+
+  gsap.fromTo(el,
+    {
+      rotate: 0
+    },
+    {
+      y: 100,
+      rotate: 90,
+      opacity: 1,
+      duration: 2,
+      ease: Expo.easeInOut,
+    })
 }
 
 export const gsapMouseLeaveAnimation = (item) => {

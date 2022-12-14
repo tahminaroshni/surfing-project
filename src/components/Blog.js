@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { gsapHoverAnimation, gsapMouseLeaveAnimation } from "../hooks/gsap";
+import { gsapHoverAnimation, gsapHoverRotateAnimation, gsapMouseLeaveAnimation } from "../hooks/gsap";
 
 const Blog = () => {
   const blogOneRef = useRef(null);
@@ -23,7 +23,7 @@ const Blog = () => {
     <section className="blogs wrapper">
       <div
         ref={blogOneRef}
-        onMouseEnter={() => gsapHoverAnimation(blogOneContent)}
+        onMouseEnter={() => gsapHoverRotateAnimation(blogOneContent)}
         onMouseLeave={() => gsapMouseLeaveAnimation(blogOneContent)}
         className="blog blog-one">
         <div ref={blogOneContent} className="blog-content">
@@ -48,7 +48,7 @@ const Blog = () => {
           <p className="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolores deleniti in error fugit earum maiores quae, pariatur iste? Debitis, magni.</p>
         </div></div>
       <div ref={blogFourRef}
-        onMouseEnter={() => gsapHoverAnimation(blogFourContent)}
+        onMouseEnter={() => gsapHoverRotateAnimation(blogFourContent)}
         onMouseLeave={() => gsapMouseLeaveAnimation(blogFourContent)}
         className="blog blog-four"><div ref={blogFourContent} className="blog-content">
           <h3 className="blog-title">Blog Four</h3>

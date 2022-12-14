@@ -22,7 +22,7 @@ const Navbar = () => {
     <nav className="wrapper">
       <div ref={logoRef} className="logo">
         <Link to='/'>
-          <h2>Surfing</h2>
+          <h2><i>Surfing</i></h2>
         </Link>
       </div>
 
